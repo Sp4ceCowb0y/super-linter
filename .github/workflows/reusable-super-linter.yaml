@@ -152,7 +152,6 @@ jobs:
           FIX_JSON_PRETTIER: true
           FIX_MARKDOWN: true
           FIX_MARKDOWN_PRETTIER: true
-          FIX_PYTHON_PYLINT: true
           FIX_PYTHON_RUFF: true
           FIX_YAML: true
           FIX_YAML_PRETTIER: true
