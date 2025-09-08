@@ -69,18 +69,3 @@ Option 1: Use [nektos/act](https://github.com/nektos/act) to run an existing Git
 Option 2: Use Docker to [run the Super-Linter image directly](https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md).
 
 Option 3: Pick the linter you want to run from Super-Linter, then install it locally to run manually. If you have a linter config, be sure to point the linter to `.github/linters/*`, and also realize that super-linter has default linter configs, that may change the linters behavior inside super-linter, with [templates listed here](https://github.com/github/super-linter/tree/main/TEMPLATES).
-
-## This repository is part of my example DevOps repos on GitHub Actions
-
-- [bretfisher/github-actions-templates](https://github.com/BretFisher/github-actions-templates) - Main repository
-- (you are here) [bretfisher/super-linter-workflow](https://github.com/BretFisher/super-linter-workflow) - Reusable linter workflow
-- [bretfisher/docker-build-workflow](https://github.com/BretFisher/docker-build-workflow)- Reusable docker build workflow
-- [bretfisher/docker-ci-automation](https://github.com/BretFisher/docker-ci-automation) - Step by step video and example of a Docker CI workflow
-- [My full list of container examples and tools](https://github.com/bretfisher)
-
-## 🎉🎉🎉 Join my cloud native DevOps community 🎉🎉🎉
-
-- [My Cloud Native DevOps Discord server](https://devops.fan)
-- [My weekly YouTube Live show](https://www.youtube.com/@BretFisher)
-- [My weekly newsletter](https://www.bretfisher.com/newsletter)
-- [My courses and coupons](https://www.bretfisher.com/courses)
