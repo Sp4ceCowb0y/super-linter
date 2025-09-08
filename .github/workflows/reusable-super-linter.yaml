@@ -125,6 +125,8 @@ jobs:
           DEFAULT_BRANCH: ${{ env.DEFAULT_BRANCH }}
           # setting this to false means that only changed files will be scanned in each commit
           VALIDATE_ALL_CODEBASE: ${{ !contains(github.event_name, 'pull_request') }}
+          # disable bash_exec checks as it doesn't work well when working with WSL
+          VALIDATE_BASH_EXEC: false
           # turn off dockerfilelint, as its a dead project
           # https://github.com/replicatedhq/dockerfilelint/issues/169
           # hadolint will still run and is sufficient (no need for two linters)
