@@ -145,7 +145,6 @@ jobs:
           KUBERNETES_KUBEVAL_OPTIONS: --ignore-missing-schemas --schema-location https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/
 
           # Enable fix mode for specific linters
-          FIX_BASH_EXEC: true
           FIX_CHECKOV: true
           FIX_CSS_PRETTIER: true
           FIX_HTML_PRETTIER: true
