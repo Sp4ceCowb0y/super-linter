@@ -14,7 +14,6 @@ name: Lint all the codes
 #
 
 on:
-
   workflow_call:
     inputs:
       devops-only:
@@ -28,12 +27,11 @@ on:
         type: string
 
 permissions:
-  contents: read            # git permissions to repo pull/push
-  statuses: write           # read/write to repo custom statuses and checks
+  contents: read # git permissions to repo pull/push
+  statuses: write # read/write to repo custom statuses and checks
 
 jobs:
   super-lint:
-
     name: Super-Linter
 
     runs-on: ubuntu-latest
@@ -137,3 +135,17 @@ jobs:
           # also change schema location to an up-to-date list
           # https://github.com/yannh/kubernetes-json-schema/#kubeval
           KUBERNETES_KUBEVAL_OPTIONS: --ignore-missing-schemas --schema-location https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/
+
+      - name: Commit and push linting fixes
+        # Run only on:
+        # - Pull requests
+        # - Not on the default branch
+        if: >
+          github.event_name == 'pull_request' &&
+          github.ref_name != github.event.repository.default_branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "chore: fix linting issues"
+          commit_user_name: super-linter
+          commit_user_email: super-linter@super-linter.dev
